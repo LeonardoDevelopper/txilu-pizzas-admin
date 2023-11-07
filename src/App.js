@@ -2,16 +2,10 @@ import logo from './logo.svg';
 import './App.css';
 import Home from './Home';
 import About from './About';
-import {BrowserRouter, Routes, Route } from "react-router-dom"
+import Main from './pages/main/main';
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path={"/"} element={<Home />} />
-        <Route path={"/about"} element={<About />} />
-
-      </Routes>
-    </BrowserRouter>
+    <Main />
   );
 }
 
