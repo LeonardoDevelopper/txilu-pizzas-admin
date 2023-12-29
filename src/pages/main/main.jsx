@@ -1,11 +1,19 @@
 import React from "react"
-
-const Main = () => {
+import "./main.css"
+import Logo from "../logo/logo"
+import { useNavigate } from "react-router-dom"
+const Main = () => { 
+    const REDIRECT_PAGE = useNavigate()
+    React.useEffect(() => {
+        setInterval(() => {
+            REDIRECT_PAGE("/sigin")
+        }, 2000);
+    }, [])
     return (
         <main>
-            <h1>Main</h1>
+            <Logo />
         </main>
     )
 }
 
-export default Main
+export default Main   

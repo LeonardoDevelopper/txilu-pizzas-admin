@@ -1,0 +1,29 @@
+/* Estilizando todos os checkboxes com a classe "custom-checkbox" */
+.custom-checkbox {
+    display: none;
+  }
+  
+  /* Estilizando o rótulo para criar o visual do checkbox personalizado */
+  label[for^="checkbox"] {
+    width: 20px; /* Largura do checkbox personalizado */
+    height: 20px; /* Altura do checkbox personalizado */
+    background-color: transparent;
+     /* Cor de fundo do checkbox personalizado */
+    border: 1px solid dimgray;
+     border-radius: 50%; /* Deixa o checkbox redondo */
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 10px; /* Espaçamento entre os checkboxes (ajuste conforme necessário) */
+    
+  }
+  
+  /* Estilizando o rótulo quando o checkbox está marcado */
+  .custom-checkbox:checked + label[for^="checkbox"] {
+    background-color: tomato; /* Altere a cor quando o checkbox estiver marcado */
+    background-image: url("../../../img/svg/icoChecked.svg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border: 1px solid tomato;
+
+  }
+  

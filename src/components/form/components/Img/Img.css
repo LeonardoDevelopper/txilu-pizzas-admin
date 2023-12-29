@@ -1,0 +1,44 @@
+.logo{
+    width: 30vh;
+    height: 25vh;
+}
+.loading-icon{
+    width: 6vh;
+    height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pizza{
+    
+    width: 125px;
+    height: 120px;
+    border-radius: 100%;
+}
+.imgInfo{
+    width: 100%;
+    height: 250px;
+    filter: brightness(0.6);
+}
+
+.imgView{
+    position: absolute;
+    top: 120px;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+}
+.icoMoney{
+    transform: rotate(120deg);
+    width: 25px;
+}
+.ico{
+    width: 20px;
+}
+.ico-item{
+    width: 15px;
+    border-radius: 100%;
+    background-color: tomato;
+    padding: 6px;
+}

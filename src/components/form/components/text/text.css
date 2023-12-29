@@ -1,0 +1,20 @@
+*{
+}
+.color-tomato{
+    color: tomato;
+    font-family:  'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.color-white{
+    color: white;
+    font-family:  'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+
+}
+
+.color-silver{
+    color: dimgray;
+    font-family:  'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+
+
+}
