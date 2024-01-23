@@ -4,6 +4,7 @@ import { ButtonDefault, ButtonSubmit } from "../../components/form/components/Bu
 import { BigTextTomato, SmallTextTomato } from "../../components/form/components/text/Text"
 import { BASE_URL } from "../../components/form/Form"
 import { useNavigate } from "react-router-dom"
+<<<<<<< HEAD
 import { Modal } from '../../components/partials/modal/index'
 const SetLocation = () =>{
     const root = document.getElementById('root')
@@ -11,6 +12,12 @@ const SetLocation = () =>{
     const [user_location, setUser_location] = React.useState(null)
     const TOKEN_ADMIN = JSON.parse(window.localStorage.getItem('TOKEN-ADMIN')) || null
     const modal = new Modal()
+=======
+const SetLocation = () =>{
+    const REDIRECT_TO = useNavigate()
+    const [user_location, setUser_location] = React.useState(null)
+    const TOKEN_ADMIN = window.localStorage.getItem('TOKEN-ADMIN') || null
+>>>>>>> 231b07e (right way)
     useEffect(() => {
         if (!TOKEN_ADMIN)
             REDIRECT_TO('/login')
@@ -26,6 +33,7 @@ const SetLocation = () =>{
 
                     }
                 })
+<<<<<<< HEAD
                 const updateLocation = {...TOKEN_ADMIN, coords: {lat : latitude, lon : longitude}}
                 console.log(updateLocation)
                  fetch(BASE_URL + '/admin/inserts/set-location', 
@@ -56,6 +64,25 @@ const SetLocation = () =>{
               
                  }
 
+=======
+
+            //     fetch(BASE_URL + '/admin/inserts/set-location', 
+            //     {
+            //         method : 'POST',
+            //         headers : {
+            //             'Content-Type' : 'application/json'
+            //         },
+            //         body : JSON.stringify()
+            //     } )
+            // }, (error) => {
+            //     if (error && error.code ==  error.PERMISSION_DENIED)
+            //     {
+            //         setUser_location(false)
+            //     }else{
+                    
+            //     }
+
+>>>>>>> 231b07e (right way)
              })
         }
     }
