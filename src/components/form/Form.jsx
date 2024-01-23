@@ -207,7 +207,7 @@ export const FormRequestReset = (event) => {
                 modal.open('failure', response.message , root)
 
 
-         }).catch((error)=>  alert(error))
+        }).catch((error)=>  alert(error))
          .finally(() => console.log("a requisição terminou!"))
             
     }

@@ -6,7 +6,7 @@ const Main = () => {
     const REDIRECT_PAGE = useNavigate()
     React.useEffect(() => {
         setInterval(() => {
-            REDIRECT_PAGE("/sigin")
+            //REDIRECT_PAGE("/sigin")
         }, 2000);
     }, [])
     return (
