@@ -7,7 +7,6 @@ const Modal_message = ({message, content_message}) => {
         <main className={message ? "show-modal": "hide-modal"}>
             <div className="container-modal">
                 <MediumTextTomato text={content_message} />
-                 <ButtonSubmit text={"Fechar"} />
             </div>
         </main>
     )

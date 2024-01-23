@@ -1,6 +1,6 @@
 import React from "react"
 import Img from "../../components/form/img/img"
-import logo from "../../components/svg/txilu-pizzas-logo.svg"
+import logo from "../../components/svg/txilu-pizzas-logo-white.svg"
 import "./logo.css"
 const Logo = () => {
     return (

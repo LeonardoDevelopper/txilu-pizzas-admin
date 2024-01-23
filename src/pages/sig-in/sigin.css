@@ -2,8 +2,8 @@ main{
     width: 100%;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     display: flex;
+    flex-direction: column;
 }
 
 header{
@@ -11,4 +11,9 @@ header{
     width: 60%;
     position: absolute;
 
+}
+.sigin{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
