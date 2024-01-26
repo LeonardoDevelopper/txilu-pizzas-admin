@@ -7,10 +7,7 @@ import Login from './pages/log-in/login';
 import SetLocation from './pages/set-location/set-location';
 import Reset from './pages/reset-password';
 import RequestReset from './pages/request-reset';
-<<<<<<< HEAD
 import DashBoard from './pages/dashboard';
-=======
->>>>>>> 231b07e (right way)
 function App() {
   return (
     <BrowserRouter>
@@ -20,10 +17,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/adm/home' element ={<Home />} />
         <Route path='/adm/set-location' element ={<SetLocation />} />
-<<<<<<< HEAD
         <Route path='/dashboard' element ={<DashBoard />} />
-=======
->>>>>>> 231b07e (right way)
         <Route path='/admin/request-reset-email' element = {<RequestReset />} />
         <Route path='/adm/reset-password' element ={<Reset />} />
 

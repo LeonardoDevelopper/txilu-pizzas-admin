@@ -1,0 +1,35 @@
+#data{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 115vh;
+    height: 75vh;
+    top: 0px;
+    left: 250px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius : 20px ;
+}
+
+.aside2{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    
+}
+
+.data-header{
+    top: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.body{
+    width: 100%;
+    display: flex;
+    margin-top: 80px;
+    height: 70vh;
+    justify-content: center;
+}

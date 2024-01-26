@@ -98,6 +98,36 @@
     padding-left: 10px;
     cursor: pointer;
 }
+
+.btn-aside{
+    border: none;
+    width: 230px;
+    height: 55px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: transparent;
+    cursor: pointer;
+
+}
+.btn-aside-selected{
+    border: none;
+    width: 230px;
+    height: 55px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: tomato;
+    cursor: pointer;
+
+}
+.btn-aside:hover{
+    background-color: rgb(231, 231, 231);
+}
 .ico{
     display: flex;
     justify-content: left;
@@ -130,4 +160,68 @@
 }
 .medium{
     width: 30px;
+}
+
+.fill{
+    width: 30px;
+}
+
+.btn-aside2{
+    border: none;
+    width: 230px;
+    height: 55px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: transparent;
+    cursor: pointer;
+
+}
+.btn-aside2-selected{
+    border: none;
+    width: 230px;
+    height: 55px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #d1d9e4;
+    cursor: pointer;
+
+}
+.btn-aside2:hover{
+    background-color: rgb(231, 231, 231);
+}
+
+.silver{
+    color: dimgray;
+}
+
+.tomato{
+    color: tomato;
+}
+
+.btn-nav{
+    width: 50%;
+    height: 55px;
+    cursor: pointer;
+    background-color: transparent;
+    border-bottom: 2px solid transparent;
+    border-top-right-radius: 20px;
+
+}
+.btn-nav:hover{
+    background-color: #f7f7f7d7;
+}
+.btn-nav-selected{
+    width: 50%;
+    height: 55px;
+    cursor: pointer;
+    border-bottom: 2px solid tomato;
+    background-color: white;
+    border-top-right-radius: 20px;
+
 }

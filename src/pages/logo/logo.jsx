@@ -5,7 +5,7 @@ import "./logo.css"
 const Logo = () => {
     return (
         <div className="container-logo" >
-            <Img path={'https://drive.usercontent.google.com/download?id=1vgiG-VCKRLT8hdRQGjviYRaV4Zq4UUAq&authuser=0'} type={"img-logo-big"} />
+            <Img path={'http://localhost:8080/uploads/txilu-pizzas-logo-no-background.png'} type={"img-logo-big"} />
         </div>
     )
 }

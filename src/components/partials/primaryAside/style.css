@@ -1,0 +1,34 @@
+.primary-aside{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    height: 70vh;
+    width: 250px;
+    top: 140px;
+    left: 0px;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.white{
+    color: white;
+}
+
+.silver{
+    color: dimgray;
+}
+
+.secundary-aside{
+    position: absolute;
+    background-color: #efefff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    height: 75vh;
+    top: 200px;
+    left: 260px;
+    gap: 10px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius : 20px ;
+}

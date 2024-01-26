@@ -6,7 +6,7 @@ import { MediumTextSilver, MediumTextTomato, SmallTextSilver } from "../../../fo
 
 export const ButtonNavigate = ({ fun, id, text, where, ...prop}) => {
     const Navigate = useNavigate()
-    return <button onClick={ () => Navigate(`/${where}`)} className="btn-default"  style={{...prop}}>{text}</button>  
+    return <button onClick={ () => {fun(); Navigate(`/${where}`)}} className="btn-default"  style={{...prop}}>{text}</button>  
     
 }
 export const ButtonNavigateIcon = ({photo, text, where}) => {
@@ -62,4 +62,50 @@ export const ButtonIcoText = ({ico1, text, ico2, where}) => {
 }
 export const ButtonCount = ({ disabled, text, fun, ...prop}) =>{
     return <button disabled = {disabled} onClick={() => fun()} style={{...prop}}>{text}</button>
+}
+
+export const ButtonAside = ({src, text, selected, fun}) => {
+    const [select, setSelect]  = React.useState(selected)
+    const parent = document.getElementById('primaryAside')
+
+    return (<button id={text} onClick={ ({target}) => { 
+
+        fun(target.id)
+        setSelect(true)
+     }} className={select ? 'btn-aside-selected' : 'btn-aside'}>
+        <Img id={text} path={src} type={'ico'} />
+        <h3 id={text} className={select ? 'white' : 'silver'}>{text}</h3>
+        <h1 id={text} className="fill"></h1>
+    </button>
+    )
+}
+
+export const ButtonAside2 = ({src, text, selected, fun}) => {
+    const [select, setSelect]  = React.useState(selected)
+    const parent = document.getElementById('primaryAside')
+
+    return (<button id={text} onClick={ ({target}) => { 
+
+        fun(target.id)
+        setSelect(true)
+     }} className={select ? 'btn-aside2-selected' : 'btn-aside2'}>
+        <Img id={text} path={src} type={'ico'} />
+        <h3 id={text} className={select ? 'tomato' : 'silver'}>{text}</h3>
+        <h1 id={text} className="fill"></h1>
+    </button>
+    )
+}
+
+export const ButtonNav = ({ text, selected, fun}) => {
+    const [select, setSelect]  = React.useState(selected)
+    const parent = document.getElementById('primaryAside')
+
+    return (<button id={text} onClick={ ({target}) => { 
+
+        fun(target.id)
+        setSelect(true)
+     }} className={select ? 'btn-nav-selected' : 'btn-nav'}>
+        <h3 id={text} className={select ? 'tomato' : 'silver'}>{text}</h3>
+    </button>
+    )
 }

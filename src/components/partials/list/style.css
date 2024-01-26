@@ -1,0 +1,107 @@
+.content-list{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.header-search{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    top: 0px;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+}
+
+.list-data{
+    width: 89%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 55vh;
+    padding: 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.data-header{
+    height: 90px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row-data:hover{
+    background-color: rgb(243, 243, 243);
+}
+
+.row-data{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    border-radius: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;    
+}
+.header-data{
+    width: 89%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+
+.list{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 90px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.txt-list{
+    width: 230px;
+    text-align: center;
+}
+
+.content-igredients{
+
+    width: 60%;
+    display: flex;
+    gap: 20px;
+    overflow-x: scroll;
+}
+.igredient{
+
+    width: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: tomato;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.span1{
+
+    text-align: center;
+    width: 70%;
+    font-weight: bold;
+}
+.span2{
+
+    text-align: center;
+    width: 30%;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+}
