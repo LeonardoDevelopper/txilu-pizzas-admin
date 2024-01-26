@@ -275,6 +275,8 @@ export const FormCreatePizza = (event) => {
     const [categories, setCategories ] = React.useState([])
 
     const [photo, setPhoto ] = React.useState(null)
+    const [preView, setPreView ] = React.useState(null)
+
     const [submiting, setSubmiting] = React.useState(false)
     useEffect(() => {
         fetch(BASE_URL + "/admin/selects/get-categories",
@@ -305,6 +307,7 @@ export const FormCreatePizza = (event) => {
         formData.append('name', name)
         formData.append('price', price)
         formData.append('desc', desc)
+        console.log(photo)
 
         fetch(BASE_URL + '/admin/inserts/create-pizza', 
         {
@@ -331,8 +334,8 @@ export const FormCreatePizza = (event) => {
         <form className="body-translate" onSubmit={ (event) => HandleSubmit(event)}>
             <div className="form-pizza">
                 <div className="photo">
-                    <Img type={'photo-pizza'} path={photo? photo : icoPizza} />
-                    <input onChange={({target}) => setPhoto(URL.createObjectURL(target.files[0]))} type="file" name="photo" id="" />
+                    <Img type={'photo-pizza'} path={preView? preView : icoPizza} />
+                    <input onChange={({target}) => {setPreView(URL.createObjectURL(target.files[0])); setPhoto(target.files[0])}} type="file" name="photo" id="" />
                 </div>
                 <div className="inputs">
                     <InputIcon classCon={"content-input-icon"} classN={"input-icon"}  type={"text"} img={icoEmail} name={"name"} placeHolder={"Nome da Pizza"} id={"1"}  value={name} setValue={setName}  />

@@ -10,6 +10,18 @@ import SecundaryAside from '../secudaryAside'
 
 const PrimaryAside = () => {
     const [aside1, setAside1] = React.useState('Home')
+    React.useEffect(() => {
+        const parent = document.getElementById('primary')
+        console.log(parent.children)
+        for (const child of parent.children) {
+            if(child.id != aside1)
+                child.setAttribute('class', 'btn-aside')
+            else
+                child.setAttribute('class', 'btn-aside-selected')
+
+            
+        }
+    }, [aside1])
     return (
         <div id='Aside' >
             <div id='primary' className='primary-aside'>
