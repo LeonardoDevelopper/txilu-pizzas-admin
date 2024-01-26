@@ -298,8 +298,8 @@ export const FormCreatePizza = (event) => {
         })
     }, [])
     function HandleSubmit(event) {
-        event.preventDefault()
         setSubmiting(true)
+        event.preventDefault()
         const formData = new FormData()
         formData.append('photo', photo)
         formData.append('name', name)
@@ -346,44 +346,8 @@ export const FormCreatePizza = (event) => {
                 </div>
             </div>
             <div className="content-igredients">
+                
                 <Igredient text={'Trigo'} />
-                <Igredient text={'Trigo'} />
-                <Igredient text={'Trigo'} />
-                <Igredient text={'Trigo'} />
-                <Igredient text={'Trigo'} />
-                <Igredient text={'Trigo'} />
-                <Igredient text={'Trigo'} />
-                <Igredient text={'Trigo'} />
-                <Igredient text={'Trigo'} />
-                <Igredient text={'Trigo'} />
-                <Igredient text={'Trigo'} />
-                <Igredient text={'Trigo'} />
-                <Igredient text={'Trigo'} />
-                <Igredient text={'Trigo'} />
-                <Igredient text={'Trigo'} />
-                <Igredient text={'Trigo'} />
-                <Igredient text={'Trigo'} />
-                <Igredient text={'Trigo'} />
-                <Igredient text={'Trigo'} />
-                <Igredient text={'Trigo'} />
-                <Igredient text={'Trigo'} />
-                <Igredient text={'Trigo'} />
-                <Igredient text={'Trigo'} />
-                <Igredient text={'Trigo'} />
-                <Igredient text={'Trigo'} />
-                <Igredient text={'Trigo'} />
-                <Igredient text={'Trigo'} />
-                <Igredient text={'Trigo'} />
-                <Igredient text={'Trigo'} />
-                <Igredient text={'Trigo'} />
-                <Igredient text={'Trigo'} />
-                <Igredient text={'Trigo'} />
-                <Igredient text={'Trigo'} />
-                <Igredient text={'Trigo'} />
-                <Igredient text={'Trigo'} />
-                <Igredient text={'Trigo'} />
-
-
 
             </div>
             <div className="content-button-create">
