@@ -7,6 +7,26 @@ import BodyData from '../bodyData/BodyData';
 const SecundaryAside = ({aside1}) => {
     const [aside2, setAside2] = React.useState('Cadastrar')
     const [data, setData] = React.useState('Categoria')
+    React.useEffect(() => {
+        const parent = document.getElementById('secundary-aside0')
+        if(parent)
+        {
+            for (const child of parent.children) {
+                if(child.id != aside2)
+                {
+                    child.children[1].style.color = 'dimgray'
+                    child.setAttribute('class', 'btn-aside2')
+                }
+                else
+                {
+                    child.setAttribute('class', 'btn-aside2-selected')
+                    child.children[1].style.color = 'tomato'
+                }
+            }
+
+        }
+        
+    }, [aside2])
     if(aside1 == 'Home')
     {
         return (
@@ -21,9 +41,11 @@ const SecundaryAside = ({aside1}) => {
         return (
             <aside className='aside2'>
                 <div style={{marginTop : '120px'}}></div>
-                <ButtonAside2 fun={setAside2} selected={true} text={'Cadastrar'} src={icoCreate}  />
-                <ButtonAside2 fun={setAside2} selected={false} text={'Listar'} src={icoCreate}  />
-                <ButtonAside2 fun={setAside2} selected={false} text={'Editar'} src={icoCreate}  />
+                <div id="secundary-aside0">
+                    <ButtonAside2 fun={setAside2} selected={true} text={'Cadastrar'} src={icoCreate}  />
+                    <ButtonAside2 fun={setAside2} selected={false} text={'Listar'} src={icoCreate}  />
+                    <ButtonAside2 fun={setAside2} selected={false} text={'Editar'} src={icoCreate}  />
+                </div>
 
                 <aside id='data' className='data'>
                     <header className='data-header'>

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import {InputNoIcon, InputIcon, InputPhone} from "./components/Input/Input"
 import "./Form.css"
-import {ButtonNavigate, ButtonSubmit } from "./components/Button/Button"
+import {ButtonDefault, ButtonNav, ButtonNavigate, ButtonSetIgradient, ButtonSubmit } from "./components/Button/Button"
 import icoUser from "../../components/svg/icoUser.svg"
 import icoEmail from "../../components/svg/icoEmail.svg"
 import icoPassword from "../../components/svg/icoPassword.svg"
@@ -273,11 +273,12 @@ export const FormCreatePizza = (event) => {
     const [category, setCategory ] = React.useState('')
     const [desc, setDesc ] = React.useState('')
     const [categories, setCategories ] = React.useState([])
-
+    const [igredients, setIgredients ] = React.useState([])
+    const [igredient, setIgredient ] = React.useState('')
     const [photo, setPhoto ] = React.useState(null)
     const [preView, setPreView ] = React.useState(null)
-
-    const [submiting, setSubmiting] = React.useState(false)
+    const [submiting, setSubmiting] = React.useState(false) 
+    console.log(igredients)
     useEffect(() => {
         fetch(BASE_URL + "/admin/selects/get-categories",
         {
@@ -299,6 +300,26 @@ export const FormCreatePizza = (event) => {
             }
         })
     }, [])
+
+    function getChildNode(text, target) {
+        const parent = target.parentElement.parentElement
+        console.log(parent)
+        for (const child of parent.children) {
+            if(child.id == text)
+            {
+                parent.removeChild(child)
+                const index = igredients.findIndex(el => el == text)
+                const removeItem = (item) => {
+                const newArray = igredients.filter((v, i) => i == index)
+                setIgredients(newArray)
+
+               }
+                
+            }
+        }
+        
+    }
+
     function HandleSubmit(event) {
         setSubmiting(true)
         event.preventDefault()
@@ -307,6 +328,9 @@ export const FormCreatePizza = (event) => {
         formData.append('name', name)
         formData.append('price', price)
         formData.append('desc', desc)
+        formData.append('category', category)
+        formData.append('igredients', igredients)
+
         console.log(photo)
 
         fetch(BASE_URL + '/admin/inserts/create-pizza', 
@@ -322,7 +346,10 @@ export const FormCreatePizza = (event) => {
             {
                 modal.open('success', response.message , root)
             }else
-                modal.open('failure', response.message , root)
+            {
+                modal.open('failure', 'Está pizza já foi registada' , root)
+
+            }
 
 
         }).catch((error) =>  modal.open('failure', error.message, root))
@@ -341,7 +368,12 @@ export const FormCreatePizza = (event) => {
                     <InputIcon classCon={"content-input-icon"} classN={"input-icon"}  type={"text"} img={icoEmail} name={"name"} placeHolder={"Nome da Pizza"} id={"1"}  value={name} setValue={setName}  />
                     <InputIcon classCon={"content-input-icon"} classN={"input-icon"}  type={"number"} img={icoEmail} name={"price"} placeHolder={"Preço da pizza"} id={"1"}  value={price} setValue={setPrice}  />
                     <textarea onChange={({target}) => setDesc(target.value)} className="select desc" name="desc" id="" placeholder="Descrição da Pizza" cols="20" rows="10"></textarea>
-                    <select onChange={({target}) => setCategory(target.value)} className="select" name="" id="">
+                    <div class='container-igredients'>
+                        <InputIcon  classCon={"content-input-small"} classN={"input-icon"}  type={"text"} img={icoEmail} name={"igredient"} placeHolder={"Adicionar ingrediente"} id={"1"}  value={igredient} setValue={setIgredient}  />
+                        <ButtonSetIgradient text={'Add'} igres={igredients} igre ={igredient} fun={ setIgredients}/>
+                    </div>
+                    
+                    <select onChange={({target}) => setCategory(target.value)} className="select" name="category" id="">
                         {categories.map((item) => <option value={item.ID}>{item.NAME}</option>)}
                 
                     </select>
@@ -350,7 +382,7 @@ export const FormCreatePizza = (event) => {
             </div>
             <div className="content-igredients">
                 
-                <Igredient text={'Trigo'} />
+                {igredients.map(igre => <Igredient fun={getChildNode} text={igre} />)}
 
             </div>
             <div className="content-button-create">
@@ -362,11 +394,12 @@ export const FormCreatePizza = (event) => {
     )
 }
 
-const Igredient = ({text}) => {
+const Igredient = ({text, fun}) => {
+    
     return (
-        <div className="igredient">
-            <span className="span1">Trigo</span>
-            <input className="span2" type="button" value="x" />
+        <div id={text} className="igredient">
+            <span className="span1">{text}</span>
+            <input id={text} onClick={({target}) => fun(text, target)} className="span2" type="button" value="x" />
         </div>
     )
 }

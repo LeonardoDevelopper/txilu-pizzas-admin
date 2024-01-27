@@ -12,12 +12,17 @@ const PrimaryAside = () => {
     const [aside1, setAside1] = React.useState('Home')
     React.useEffect(() => {
         const parent = document.getElementById('primary')
-        console.log(parent.children)
         for (const child of parent.children) {
             if(child.id != aside1)
+            {
+                child.children[1].style.color = 'dimgray'
                 child.setAttribute('class', 'btn-aside')
+            }
             else
+            {
                 child.setAttribute('class', 'btn-aside-selected')
+                child.children[1].style.color = 'white'
+            }
 
             
         }

@@ -6,7 +6,28 @@ import { BASE_URL } from '../../form/Form';
 
 export const PizzaList = () => {
     const [name, setName] = React.useState('')
+    const [pizzas, setPizzas] = React.useState([])
+    React.useEffect(() => {
+        fetch(BASE_URL + "/admin/selects/get-pizzas",
+        {
+            method : 'GET',
+            headers : {
+                'Content-Type': 'application/json'
+            },
+        }).
+        then((res) => res.json())
+        .then((response) =>{
+            if(response.OK)
+            {
+                if(response.data.length != 0)
+                {
+                    setPizzas(response.data)
+                    console.log(pizzas)
 
+                }
+            }
+        })
+    }, [])
     return (
         <div className='body-translate'>
             <div className='content-list'>
@@ -23,154 +44,13 @@ export const PizzaList = () => {
                         <span className='txt-list'>Data</span>
                     </header>
                     <div class="list-data">
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
-                        <TDPizza id={'abs3-m4-fjg5m-f58f-fgg'} name={'Pizza Margarine'} price={'5000Kz'} status={'Disponivel'} Date={'2020-04-05'} />
+                    { pizzas.length > 0 ? pizzas.map((pizza) => 
+                                <TDPizza id={pizza.ID} name={pizza.NAME} price={pizza.PRICE+', 00Kz'} status={pizza.STATUS} Date={pizza.createdAt} />
 
+                            )
+                            :
+                            <h3 style = {{marginTop : '200px'}}>Nenhuma pizza disponível</h3>
+                        }
                     </div>
                 </div>
 

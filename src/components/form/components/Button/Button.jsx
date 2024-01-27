@@ -3,6 +3,10 @@ import "./Button.css"
 import { Img } from "../Img/Img" 
 import { Navigate, useNavigate } from "react-router-dom"
 import { MediumTextSilver, MediumTextTomato, SmallTextSilver } from "../../../form/components/text/Text"
+import { Modal } from "../../../partials/modal"
+
+const alert = new Modal()
+const root = document.getElementById('root')
 
 export const ButtonNavigate = ({ fun, id, text, where, ...prop}) => {
     const Navigate = useNavigate()
@@ -27,8 +31,27 @@ export const ButtonIconCircle = ( { text, id, fun, photo, ...prop } ) => {
 
 export const ButtonDefault = ( { location, text, id, fun, photo, ...prop } ) => {
 
-    return <button disabled={location} onClick={() => fun()} style={{...prop}} className= {location ? "btn-default-disabled": "btn-default"}> 
+    return <button type="button" disabled={location} onClick={() => fun()} style={{...prop}} className= {location ? "btn-default-disabled": "btn-default"}> 
     {text} {photo}
+     </button>
+
+}
+
+export const ButtonSetIgradient = ( { igre, igres, text, fun, } ) => {
+    const handle = () => {
+        const index = igres.findIndex(el => el == igre)
+        if(index == -1)
+        {
+            fun([...igres, igre])
+
+        }else{
+            alert.open('failure', 'Este igrediente já existe', root)
+        }
+
+    }
+
+    return <button type="button" onClick={() => handle()} className= {"btn-default"}> 
+    {text}
      </button>
 
 }
@@ -66,7 +89,6 @@ export const ButtonCount = ({ disabled, text, fun, ...prop}) =>{
 
 export const ButtonAside = ({src, text, selected, fun}) => {
     const [select, setSelect]  = React.useState(selected)
-    const parent = document.getElementById('primaryAside')
 
     return (<button id={text} onClick={ ({target}) => { 
 
@@ -82,7 +104,6 @@ export const ButtonAside = ({src, text, selected, fun}) => {
 
 export const ButtonAside2 = ({src, text, selected, fun}) => {
     const [select, setSelect]  = React.useState(selected)
-    const parent = document.getElementById('primaryAside')
 
     return (<button id={text} onClick={ ({target}) => { 
 

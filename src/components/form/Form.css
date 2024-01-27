@@ -56,3 +56,8 @@ form{
     align-items: center;
     margin-top: 50px;
 }
+
+.container-igredients{
+    display: flex;
+    gap: 100px;
+}

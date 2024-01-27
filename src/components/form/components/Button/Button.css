@@ -188,12 +188,12 @@
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    background-color: #d1d9e4;
+    background-color: rgb(245, 245, 245);
     cursor: pointer;
 
 }
 .btn-aside2:hover{
-    background-color: rgb(231, 231, 231);
+    background-color: rgb(249, 249, 249);
 }
 
 .silver{
